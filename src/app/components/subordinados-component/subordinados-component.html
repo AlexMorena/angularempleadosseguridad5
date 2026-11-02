@@ -1,0 +1,48 @@
+<div class="max-w-6xl mx-auto px-4 py-8">
+  
+  <!-- Cabecera de la sección -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold tracking-tight text-white bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
+      Subordinados
+    </h1>
+    <p class="text-sm text-slate-400 mt-1">Listado general de empleados a cargo</p>
+  </div>
+
+  <!-- Contenedor de la tabla con diseño Glassmorphism -->
+  <div class="bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl shadow-xl shadow-slate-950/50 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border-collapse">
+        
+        <!-- Cabecera de la tabla -->
+        <thead>
+          <tr class="border-b border-slate-800 bg-slate-800/40 text-slate-400 text-xs uppercase tracking-wider font-semibold">
+            <th class="px-6 py-4">ID Empleado</th>
+            <th class="px-6 py-4">Apellido</th>
+            <th class="px-6 py-4">Oficio</th>
+            <th class="px-6 py-4">Salario</th>
+            <th class="px-6 py-4">Director</th>
+          </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla (Bucle de Angular) -->
+        <tbody class="divide-y divide-slate-800/60 text-sm text-slate-300">
+          @for (subordinado of subordinados; track subordinado.idEmpleado) {
+            <tr class="hover:bg-slate-800/40 transition-colors">
+              <td class="px-6 py-4 font-medium text-white">{{ subordinado.idEmpleado }}</td>
+              <td class="px-6 py-4 text-slate-200 font-semibold">{{ subordinado.apellido }}</td>
+              <td class="px-6 py-4">
+                <span class="px-2.5 py-1 text-xs font-medium text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
+                  {{ subordinado.oficio }}
+                </span>
+              </td>
+              <td class="px-6 py-4 font-medium text-emerald-400">{{ subordinado.salario }}</td>
+              <td class="px-6 py-4 text-slate-400">{{ subordinado.director }}</td>
+            </tr>
+          }
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>

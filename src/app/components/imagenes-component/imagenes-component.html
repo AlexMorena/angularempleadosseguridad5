@@ -1,0 +1,59 @@
+<div class="max-w-md mx-auto px-4 py-8">
+  <div
+    class="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-6 rounded-2xl shadow-xl shadow-slate-950/50 space-y-6"
+  >
+    <!-- Título de la sección -->
+    <div class="text-center">
+      <h2 class="text-xl font-bold tracking-tight text-white">Subir Imagen</h2>
+      <p class="text-xs text-slate-400 mt-1">Selecciona o arrastra una imagen para cargarla</p>
+    </div>
+
+    <!-- Contenedor del Input File personalizado -->
+    <div class="relative group">
+      <label
+        class="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed border-slate-700/80 rounded-xl cursor-pointer bg-slate-800/40 hover:bg-slate-800/70 hover:border-indigo-500/50 transition-all"
+      >
+        <div class="flex flex-col items-center justify-center pt-5 pb-6 px-4 text-center">
+          <!-- Icono de subida -->
+          <svg
+            class="w-8 h-8 mb-2 text-indigo-400 group-hover:scale-110 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+            />
+          </svg>
+          <p class="text-xs text-slate-300 font-medium">
+            Haz clic para seleccionar o arrastra aquí
+          </p>
+          <p class="text-[10px] text-slate-500 mt-1">SVG, PNG, JPG o GIF (máx. 800x800px)</p>
+        </div>
+
+        <!-- Input file real (oculto visualmente pero funcional con tu #miArchivo) -->
+        <input #miArchivo type="file" accept="image/*" class="hidden" />
+      </label>
+    </div>
+
+    <!-- Botón Subir -->
+    <button
+      type="button"
+      (click)="subirImagen(miArchivo)"
+      class="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm rounded-xl shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+        />
+      </svg>
+      <span>Subir imagen</span>
+    </button>
+  </div>
+</div>
